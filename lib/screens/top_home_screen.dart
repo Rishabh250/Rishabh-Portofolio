@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeView extends StatelessWidget {
-  HomeView({
+  const HomeView({
     Key? key,
   }) : super(key: key);
 
@@ -126,7 +126,7 @@ class HomeView extends StatelessWidget {
                 ],
               ),
             ),
-            Spacer(),
+            const Spacer(),
             Responsive.isDesktop(context)
                 ? Padding(
                     padding: const EdgeInsets.only(top: 100.0, right: 180),

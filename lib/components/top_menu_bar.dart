@@ -4,46 +4,51 @@ import 'package:finalportfolio/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class TopMenuBar extends StatelessWidget {
-  TopMenuBar({Key? key, required this.scrollController}) : super(key: key);
+class TopMenuBar extends StatefulWidget {
+  const TopMenuBar({Key? key, required this.scrollController})
+      : super(key: key);
 
   final ScrollController scrollController;
+
+  @override
+  State<TopMenuBar> createState() => _TopMenuBarState();
+}
+
+class _TopMenuBarState extends State<TopMenuBar> {
   Color _color = primaryColor;
 
-  double _offSet = 0;
-
   void _scrollToHome(_offSet) {
-    scrollController.animateTo(_offSet,
+    widget.scrollController.animateTo(_offSet,
         duration: const Duration(seconds: 1), curve: Curves.linear);
   }
 
   void _scrollToAbout(_offSet) {
-    scrollController.animateTo(_offSet,
+    widget.scrollController.animateTo(_offSet,
         duration: const Duration(seconds: 1), curve: Curves.linear);
   }
 
   void _scrollToService(_offSet) {
-    scrollController.animateTo(_offSet,
+    widget.scrollController.animateTo(_offSet,
         duration: const Duration(seconds: 1), curve: Curves.linear);
   }
 
   void _scrollToSkills(_offSet) {
-    scrollController.animateTo(_offSet,
+    widget.scrollController.animateTo(_offSet,
         duration: const Duration(seconds: 1), curve: Curves.linear);
   }
 
   void _scrollToProject(_offSet) {
-    scrollController.animateTo(_offSet,
+    widget.scrollController.animateTo(_offSet,
         duration: const Duration(seconds: 1), curve: Curves.linear);
   }
 
   void _scrollToContact(_offSet) {
-    scrollController.animateTo(_offSet,
+    widget.scrollController.animateTo(_offSet,
         duration: const Duration(seconds: 1), curve: Curves.linear);
   }
 
   getScrollState() {
-    if (scrollController.offset != 0) {
+    if (widget.scrollController.offset != 0) {
       _color = Colors.white;
     } else {
       _color = primaryColor;

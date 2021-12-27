@@ -2,7 +2,6 @@ import 'package:finalportfolio/components/nav_bar.dart';
 import 'package:finalportfolio/components/top_menu_bar.dart';
 import 'package:finalportfolio/screens/screens.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../constants.dart';
 import '../responsive.dart';
@@ -19,7 +18,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   late AnimationController textAnimationController;
   late Animation _colorTween;
   late Animation _textColorTween;
-  late Animation<Offset> _transTween;
   late ScrollController _scrollController;
 
   @override
@@ -35,8 +33,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     textAnimationController =
         AnimationController(vsync: this, duration: const Duration(seconds: 0));
 
-    _transTween = Tween(begin: const Offset(-10, 0), end: const Offset(-10, 0))
-        .animate(textAnimationController);
     _scrollController = ScrollController();
 
     super.initState();
@@ -46,16 +42,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   void dispose() {
     _scrollController.dispose();
     super.dispose();
-  }
-
-  void _scrollToHome() {
-    _scrollController.animateTo(0,
-        duration: const Duration(seconds: 1), curve: Curves.linear);
-  }
-
-  void _scrollToAbout() {
-    _scrollController.animateTo(500,
-        duration: const Duration(seconds: 1), curve: Curves.linear);
   }
 
   bool _scrollListener(ScrollNotification scrollInfo) {
